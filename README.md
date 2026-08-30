@@ -79,6 +79,18 @@ step in one `Pipeline`, and compared by ROC-AUC on the validation split:
 XGBoost is currently the best-performing model and the leading candidate
 for the final submission, pending hyperparameter tuning.
 
+### Hyperparameter tuning
+
+XGBoost was tuned with `RandomizedSearchCV` (10 candidates, 3-fold
+stratified CV, scored on ROC-AUC) over `n_estimators`, `max_depth`,
+`learning_rate`, `subsample`, and `colsample_bytree`.
+
+![Model Score](model_score.png)
+
+The tuned XGBoost (highlighted in purple in the comparison bar chart) came
+in slightly below the untuned default, so the untuned XGBoost remains the
+leading candidate for the final submission.
+
 ## Project structure
 
 - `notebook.ipynb` — working analysis / modeling notebook (gitignored, will be shared after competition)
