@@ -1,0 +1,5 @@
+example.ipynb
+*.csv
+*.ipynb
+smartphone_addiction_data/
+catboost_info/
