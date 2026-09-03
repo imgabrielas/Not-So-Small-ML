@@ -10,7 +10,7 @@ Each project folder is self-contained: its own notebook(s), data, README, and (w
 
 | Project                                                   | Description | Status |
 |-----------------------------------------------------------|---|---|
-| [`alzheimer-detection/`](alzheimer/README.md)             | Classifying Alzheimer's disease diagnosis from MRI volumetric measurements, cognitive scores, and clinical data. Iterative workflow across notebooks, from a baseline Random Forest to feature-selected, tuned models. | Complete |
+| [`alzheimer-detection/`](https://github.com/imgabrielas/How-To-Make-ML)             | Classifying Alzheimer's disease diagnosis from MRI volumetric measurements, cognitive scores, and clinical data. Iterative workflow across notebooks, from a baseline Random Forest to feature-selected, tuned models. | Complete |
 | [`smartphone-addiction/`](smartphone-addiction/README.md) | Kaggle Playground Series (S6E8) binary classification competition predicting smartphone addiction from behavioral and demographic features. Sklearn preprocessing pipelines, model comparison (Logistic Regression, Random Forest, XGBoost), hyperparameter tuning. | Complete |
 
 ## Structure
