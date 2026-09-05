@@ -8,6 +8,10 @@ with it.
 
 ## Data
 
+- Source: Gold Price Data. Kaggle / Mohammed Youssef
+- Samples: 2,290 trading days (2008 to 2018)
+- Features: 5 numeric cross-asset prices
+
 `gold_price_data.csv` (included in this folder) has 2,290 rows and 6 columns:
 
 | Column    | Description          |
