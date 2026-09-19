@@ -51,6 +51,8 @@ Every model gained roughly 1–1.5 accuracy points and 0.5–0.7 AUC points, con
 
 **Caveat:** this improvement is real but partly an artifact of an easier benchmark — the genuinely ambiguous examples were removed from the *test set* too, so the model is no longer graded on cases that are inherently unresolvable from these features alone. In deployment, websites with these same ambiguous feature signatures will still occur. The "conflicts kept" numbers in the main comparison above remain the more honest estimate of real-world performance; this table is a diagnostic, not a replacement result.
 
+![ROC AUC](rocauc.png)
+
 ## Conclusion
 
 Final comparison table includes two times of evaluation, one with conflicting rows kept and the other one rows were dropped. Slight improvement can be seen in all models with metrics for dropped rows. Random Forest has the biggest accuracy 0.962 and ROC AUC 0.995, Tuned XGB is second best in terms of accuracy but better with ROC AUC of 0.996. In practice both of those models are good, and choice in between goes down to secondary factors like inference speed, interpretability, ease of deployment rather than performance.
