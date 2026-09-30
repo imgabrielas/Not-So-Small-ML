@@ -23,6 +23,25 @@ Place the competition files in `Electric-Vehicle-Purchases-Data/`
 - `test.csv` — unlabeled test data
 - `sample_submission.csv` — expected submission format (`id`, `Will_Buy_EV`)
 
+## Models
+
+All models run through a shared `ColumnTransformer` (scaling numeric
+features, one-hot encoding nominal/binary categoricals, ordinal encoding
+`Range_Anxiety_Level`) and are compared on validation ROC-AUC:
+
+| Model          | Validation ROC-AUC |
+|----------------|--------------------:|
+| **XGB (tuned)** | **0.9417** |
+| XGB             | 0.9384 |
+| LogReg          | 0.9380 |
+| RF              | 0.9345 |
+
+`XGBClassifier`, tuned via `RandomizedSearchCV` (`StratifiedKFold`, 3 folds,
+10 candidates) over `n_estimators`, `max_depth`, `learning_rate`,
+`subsample`, and `colsample_bytree`, is the best model so far.
+
+**Current Kaggle leaderboard position: #2456.**
+
 ## Project structure
 
 - `Electric-Vehicle-Purchases.ipynb` — working analysis / modeling notebook
