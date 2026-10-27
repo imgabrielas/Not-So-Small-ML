@@ -10,7 +10,7 @@ Each project folder is self-contained: its own notebook(s), data, README, and (w
 
 | Project                                                   | Description | Status |
 |-----------------------------------------------------------|---|---|
-| [`alzheimer/`](alzheimer/README.md) | Classifying Alzheimer's disease diagnosis from MRI volumetric measurements, cognitive scores, and clinical data. Iterative workflow across notebooks, from a baseline Random Forest to feature-selected, tuned models. | Complete |
+| [`Alzheimer Detection/`](Alzheimer Detection/README.md) | Classifying Alzheimer's disease diagnosis from MRI volumetric measurements, cognitive scores, and clinical data. Iterative workflow across notebooks, from a baseline Random Forest to feature-selected, tuned models. | Complete |
 | [`Smartphone Addiction/`](Smartphone%20Addiction/README.md) | Kaggle Playground Series (S6E8) binary classification competition predicting smartphone addiction from behavioral and demographic features. Sklearn preprocessing pipelines, model comparison (Logistic Regression, Random Forest, XGBoost), hyperparameter tuning. | Complete |
 | [`Phishing Websites/`](Phishing%20Websites/README.md) | Binary classification predicting phishing websites from 30 URL/page-derived features (UCI Phishing Websites Data Set). | Ongoing |
 | [`Gold Price Prediction/`](Gold%20Price%20Prediction/README.md) | Regression project (Kaggle dataset) predicting gold ETF price from cross-asset market indicators, 2008-2018. | Complete |

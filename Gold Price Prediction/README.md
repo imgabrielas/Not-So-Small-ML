@@ -74,5 +74,5 @@ pip install -r ../requirements.txt
 
 ## Project structure
 
-- `notebook.ipynb` — data loading, EDA, date feature engineering, model training, hyperparameter tuning, model comparison, and sample predictions.
+- `Smartphone_Addiction.ipynb` — data loading, EDA, date feature engineering, model training, hyperparameter tuning, model comparison, and sample predictions.
 - `gold_price_data.csv` — raw dataset used by the notebook.

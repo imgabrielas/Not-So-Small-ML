@@ -16,7 +16,7 @@ competition is finished.
 
 ## Data
 
-Place the competition files in `Electric-Vehicle-Purchases-Data/`
+Place the competition files in `data/`
 (gitignored):
 
 - `train.csv` — labeled training data
@@ -44,5 +44,5 @@ features, one-hot encoding nominal/binary categoricals, ordinal encoding
 
 ## Project structure
 
-- `Electric-Vehicle-Purchases.ipynb` — working analysis / modeling notebook
-- `Electric-Vehicle-Purchases-Data/` — raw competition data (gitignored, not tracked)
+- `Electric_Vehicle_Purchases.ipynb` — working analysis / modeling notebook
+- `data/` — raw competition data (gitignored, not tracked)

@@ -93,6 +93,6 @@ leading candidate for the final submission.
 
 ## Project structure
 
-- `notebook.ipynb` — working analysis / modeling notebook (gitignored, will be shared after competition)
+- `Smartphone_Addiction.ipynb` — working analysis / modeling notebook (gitignored, will be shared after competition)
 - `smartphone_addiction_data/` — raw competition data (gitignored, not tracked)
 
