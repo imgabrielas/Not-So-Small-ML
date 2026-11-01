@@ -1,50 +1,43 @@
 # Airline Satisfaction
 
-Binary classification project focused on predicting whether an airline passenger is satisfied with their flight experience.
+Binary classification project predicting whether an airline passenger is satisfied with their flight, built for the Kaggle competition [Predicting Airline Satisfaction (Playground Series, Season 6 Episode 10)](https://www.kaggle.com/competitions/playground-series-s6e10).
 
-## Overview
-This project uses customer experience and demographic features to predict the target variable `satisfaction` in a tabular dataset. The notebook is currently in the data-preparation and modeling-setup phase, where the data is being explored, cleaned, and transformed before benchmarking classifiers.
+## Competition result
+- **Leaderboard position:** 3161
+- **Submitted model:** XGBoost with default hyperparameters (200 estimators), refit on the full training set
+- **Validation ROC-AUC:** 0.9571
 
-## Dataset
-The project loads separate train and test CSV files from the `data/` folder.
+The model was submitted without any hyperparameter tuning, so the score is a baseline. Tuning (e.g. `RandomizedSearchCV` with `StratifiedKFold`) is the clear next step for improving the result.
 
-- Training set: 699,635 rows
-- Test set: 299,844 rows
+## Data
+- Training set: 699,635 rows, 23 columns
+- Test set: 299,844 rows, 22 columns
 - Target: `satisfaction` (`True` / `False`)
 
-The dataset includes flight-service ratings, delay information, trip details, and customer metadata such as age, gender, customer type, travel type, and class.
+Features cover passenger demographics (age, gender, customer type), trip details (type of travel, class, flight distance), delays, and 0 to 5 ratings for 14 service areas such as wifi, seat comfort and online boarding.
 
-## Current stage of work
-The notebook already includes the following work:
+### Ignored data
+- **292 training rows dropped** with missing `Arrival Delay in Minutes` (0.04% of the training set)
+- **`id` column excluded** from the features, as it is only a row identifier
+- The 130 missing `Arrival Delay in Minutes` values in the test set were kept and filled with the median by the preprocessing pipeline, since test rows cannot be dropped from a submission
 
-- Loading the training and test data
-- Checking dataset shape and basic structure
-- Inspecting columns, dtypes, and unique values
-- Confirming the target variable and identifying feature groups
-- Finding missing values in the dataset
-- Preparing preprocessing pipelines for:
-  - numeric features using median imputation and standard scaling
-  - ordinal features such as `Class`
-  - binary categorical features such as `Gender`, `Customer Type`, and `Type of Travel`
-- Splitting the data into training and validation sets with stratification
+## Approach
+1. Brief EDA: structure, dtypes, unique values and missing data
+2. Preprocessing with a scikit-learn `ColumnTransformer`:
+   - numeric features: median imputation and standard scaling
+   - `Class`: ordinal encoding (`Eco` < `Eco Plus` < `Business`)
+   - `Gender`, `Customer Type`, `Type of Travel`: binary one-hot encoding
+3. Stratified 80/20 train/validation split
+4. Comparison of three baseline models on validation ROC-AUC
 
-The notebook also imports the main ML libraries used for the task, including:
+| Model | Validation ROC-AUC |
+|---|---|
+| XGBoost | 0.9571 |
+| Random Forest | 0.9540 |
+| Logistic Regression | 0.9206 |
 
-- pandas and numpy
-- matplotlib and seaborn
-- scikit-learn preprocessing and modeling tools
-- XGBoost
-
-## Feature structure
-The data contains a mix of:
-
-- continuous variables: age, flight distance, delay times, service ratings
-- ordinal categorical variables: flight class
-- binary categorical variables: gender, customer type, travel type
-
-This makes the project a good example of preprocessing mixed-type tabular data for classification models.
+## Tech stack
+pandas, NumPy, Matplotlib, seaborn, scikit-learn, XGBoost
 
 ## Status
-In progress.
-
-The current notebook has completed the exploratory analysis and built the preprocessing foundation. The next step is to train baseline models, compare performance, and tune the best-performing approach (likely Logistic Regression, Random Forest, or XGBoost) using validation metrics such as ROC-AUC.
+Baseline submitted. Possible improvements: hyperparameter tuning, cross-validation instead of a single split, and feature engineering (e.g. aggregated service scores, total delay).
